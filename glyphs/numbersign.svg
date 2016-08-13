@@ -14,7 +14,7 @@
    id="svg2985"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="exclam.svg">
+   sodipodi:docname="numbersign.svg">
   <defs
      id="defs5498" />
   <sodipodi:namedview
@@ -29,9 +29,9 @@
      showgrid="true"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:zoom="0.90799999"
-     inkscape:cx="376.42826"
-     inkscape:cy="367.34207"
+     inkscape:zoom="1.2841059"
+     inkscape:cx="437.62686"
+     inkscape:cy="370.30581"
      inkscape:window-x="-7"
      inkscape:window-y="0"
      inkscape:current-layer="layer1"
@@ -103,14 +103,14 @@
      transform="translate(0,-200)">
     <path
        style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 300,301 1,-1 98,0 1,1 0,398 -1,1 -98,0 -1,-1 z"
-       id="path3337"
+       d="m 201,900 -1,-1 0,-98 -1,-1 -98,0 -1,-1 0,-98 1,-1 98,0 1,-1 0,-198 -1,-1 -98,0 -1,-1 0,-98 1,-1 98,0 1,-1 0,-98 1,-1 98,0 1,1 0,98 1,1 198,0 1,-1 0,-98 1,-1 98,0 1,1 0,98 1,1 98,0 1,1 0,98 -1,1 -98,0 -1,1 0,198 1,1 98,0 1,1 0,98 -1,1 -98,0 -1,1 0,98 -1,1 -98,0 -1,-1 0,-98 -1,-1 -198,0 -1,1 0,98 -1,1 z"
+       id="path4141"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccc" />
+       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
     <path
-       style="fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
-       d="m 300,801 1,-1 98,0 1,1 0,98 -1,1 -98,0 -1,-1 z"
-       id="path4139"
+       style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="m 500,501 -1,-1 -198,0 -1,1 0,198 1,1 198,0 1,-1 z"
+       id="path4143"
        inkscape:connector-curvature="0" />
   </g>
 </svg>
