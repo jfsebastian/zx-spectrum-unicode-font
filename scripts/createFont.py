@@ -22,21 +22,25 @@ def createFont():
   font.descent = descent
   font.em = em
   font.encoding = encoding
-  font.save("test.sfd")
+  font.save(buildPath+fontname+".sfd")
   return font
 
-def createNamedChar(charName):
+def createNamedChar(charName, file):
   print("     -> creating "+charName)
   glyph = font.createMappedChar(charName)
-  glyph.importOutlines(glyphPath+charName+".svg")
+  glyph.importOutlines(file)
 
 def processGlyphList():
   for line in open(glyphlist):
     li=line.strip()
     if not li.startswith("#"):
       char = line.split(";")
-      if os.path.isfile("../glyphs/"+char[0]+".svg"):
-        createNamedChar(char[0])
+      if char[0][0].isupper():
+        path = glyphPath+"upper/"
+      else:
+        path = glyphPath+"lower/"
+      if os.path.isfile(path+char[0]+".svg"):
+        createNamedChar(char[0], path+char[0]+".svg")
 
 
 #Main
@@ -47,4 +51,6 @@ font = createFont()
 print "Process glyphs"
 processGlyphList()
 
+font.save(buildPath+fontname+".sfd")
 font.generate(buildPath+fontname+".ttf")
+font.generate(buildPath+fontname+".bdf","bdf")
