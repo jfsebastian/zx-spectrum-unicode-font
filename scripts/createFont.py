@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 import fontforge
 import os.path
+import re
+from os import walk
 
 #Definitions
 glyphlist = "../reference/glyphlist.txt"
@@ -30,6 +32,16 @@ def createNamedChar(charName, file):
   glyph = font.createMappedChar(charName)
   glyph.importOutlines(file)
 
+def createCodedChar(code, file):
+  print("     -> creating U"+code)
+  glyph = font.createChar(int(code, 16))
+  glyph.importOutlines(file)
+
+def createSpace():
+  print("     -> creating Space Character")
+  glyph = font.createChar(32)
+  glyph.width = em
+
 def processGlyphList():
   for line in open(glyphlist):
     li=line.strip()
@@ -42,6 +54,14 @@ def processGlyphList():
       if os.path.isfile(path+char[0]+".svg"):
         createNamedChar(char[0], path+char[0]+".svg")
 
+def processUnnamedGlyphs():
+  filelist = []
+  path = glyphPath+"unnamed/"
+  for (dirpath, dirnames, filenames) in walk(path):
+    filelist.extend(filenames)
+  for file in filelist:
+    code = re.search('U(.+?).svg', file).group(1)
+    createCodedChar(code, path+file)
 
 #Main
 print "Creating the new font empty"
@@ -50,6 +70,8 @@ font = createFont()
 
 print "Process glyphs"
 processGlyphList()
+processUnnamedGlyphs()
+createSpace()
 
 font.save(buildPath+fontname+".sfd")
 font.generate(buildPath+fontname+".ttf")
